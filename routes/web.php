@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Route::get('/product', 'App\Http\Controllers\ProductController@index');
 
+Route::post('/product/new', 'App\Http\Controllers\ProductController@create');
+
+Route::get('/product/new', 'App\Http\Controllers\ProductController@new');
+
 
