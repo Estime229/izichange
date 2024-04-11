@@ -69,7 +69,19 @@ class ProductController extends Controller
         // Rediriger l'utilisateur vers la route /product
         return redirect('/product');
     }
+
     
+    public function delete($id)
+    {
+        // Récupérer le produit à supprimer
+        $product = Product::findOrFail($id);
+
+        // Supprimer le produit de la base de données
+        $product->delete();
+
+        // Rediriger l'utilisateur vers la page /product
+        return redirect('/product');
+    }
     
 
 
