@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,5 +22,9 @@ Route::get('/product', 'App\Http\Controllers\ProductController@index');
 Route::post('/product/new', 'App\Http\Controllers\ProductController@create');
 
 Route::get('/product/new', 'App\Http\Controllers\ProductController@new');
+
+
+Route::post('/update/{id}', [ProductController::class, 'update'])->name('product.update');
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 
 
